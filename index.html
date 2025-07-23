@@ -135,7 +135,7 @@
             <!-- <li><a class="dropdown-item custom-dropdown-color" href="steel-wires.html"><i class="fas fa-cogs me-2"></i> Steel Wires</a></li> -->
             <!-- <li><a class="dropdown-item custom-dropdown-color" href="chemicals.html"><i class="fas fa-flask me-2"></i> Chemicals</a></li> -->
             <!-- <li><a class="dropdown-item custom-dropdown-color" href="non-ferrous-metal.html"><i class="fas fa-cogs me-2"></i> Non-Ferrous Metal</a></li> -->
-            <li><a class="dropdown-item custom-dropdown-color" href="long-product.html"><i class="fas fa-barcode me-2"></i> Long Products</a></li>
+            <!-- <li><a class="dropdown-item custom-dropdown-color" href="long-product.html"><i class="fas fa-barcode me-2"></i> Long Products</a></li> -->
             <li><a class="dropdown-item custom-dropdown-color" href="sheet-metal.html"><i class="fas fa-industry me-2"></i> Sheet Metals</a></li>
           </ul>
         </li>
@@ -351,6 +351,7 @@
 </div>
 <!-- product buttons -->
 <!-- Tabs -->
+<!-- Tabs -->
 <div class="tabs">
   <button class="tab-btn active" data-filter="all">All</button>
   <button class="tab-btn" data-filter="threaded">Threaded</button>
@@ -367,76 +368,107 @@
   <a href="washers.html" class="filter-item threaded">Washers</a>
   <a href="bolt.html" class="filter-item threaded">Bolt</a>
   <a href="studs.html" class="filter-item threaded">Studs</a>
-  <a href="long-product.html" class="filter-item plates">Long Product</a>
-  <a href="sheet-metal.html" class="filter-item plates">Sheet Metal</a>
+  <a href="sheet-metal.html" class="filter-item plates">Metal Sheets</a>
 </div>
 
 <!-- CSS -->
 <style>
-.tabs {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin: 30px auto;
-  flex-wrap: wrap;
-}
-
-.tab-btn {
-  padding: 10px 20px;
-  border: none;
-  background: #dce1e7;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.tab-btn.active {
-  background: #8ab4f8;
-  color: white;
-}
-
-.filter-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columns */
-  grid-template-rows: repeat(5, auto);   /* 5 rows */
-  gap: 20px;
-  max-width: 600px;
-  margin: 30px auto;
-  padding: 25px;
-  background: #e0e5ec;
-  border-radius: 20px;
-  box-shadow: inset 4px 4px 10px #c1c9d6, inset -4px -4px 10px #ffffff;
-}
-
-.filter-item {
-  background: #f0f0f3;
-  padding: 18px 10px;
-  text-align: center;
-  border-radius: 12px;
-  text-decoration: none;
-  color: #333;
-  font-weight: 600;
-  font-family: 'Segoe UI', sans-serif;
-  box-shadow: 8px 8px 15px #c1c9d6, -8px -8px 15px #ffffff;
-  transition: all 0.3s ease;
-}
-
-.filter-item:hover {
-  transform: scale(1.05);
-  box-shadow: inset 3px 3px 10px #c1c9d6, inset -3px -3px 10px #ffffff;
-}
-
-/* Responsive fallback */
-@media (max-width: 768px) {
-  .filter-grid {
-    grid-template-columns: 1fr;
-    grid-template-rows: none;
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f7f8fa;
   }
-}
+
+  .tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px auto 10px;
+    flex-wrap: wrap;
+  }
+
+  .tab-btn {
+    padding: 10px 20px;
+    border: none;
+    background: #dce1e7;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .tab-btn.active {
+    background: #8ab4f8;
+    color: white;
+  }
+
+  .filter-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Desktop: 3 columns */
+    gap: 20px;
+    max-width: 720px;
+    margin: 20px auto;
+    padding: 25px;
+    background: #e0e5ec;
+    border-radius: 20px;
+    box-shadow: inset 4px 4px 10px #c1c9d6, inset -4px -4px 10px #ffffff;
+  }
+
+  .filter-item {
+    background: #f0f0f3;
+    padding: 22px 10px;
+    text-align: center;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-size: 15px;
+    box-shadow: 8px 8px 15px #c1c9d6, -8px -8px 15px #ffffff;
+    transition: all 0.3s ease;
+  }
+
+  .filter-item:hover {
+    transform: scale(1.05);
+    box-shadow: inset 3px 3px 10px #c1c9d6, inset -3px -3px 10px #ffffff;
+  }
+
+  /* Tablet View */
+  @media (max-width: 768px) {
+    .filter-grid {
+      grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+      max-width: 90%;
+      gap: 16px;
+      padding: 20px;
+    }
+
+    .filter-item {
+      padding: 20px 8px;
+      font-size: 14px;
+    }
+  }
+
+  /* Mobile View */
+  @media (max-width: 480px) {
+    .tabs {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .filter-grid {
+      grid-template-columns: 1fr; /* 1 column on phones */
+      padding: 16px;
+      gap: 12px;
+    }
+
+    .filter-item {
+      padding: 18px;
+      font-size: 13.5px;
+    }
+  }
 </style>
 
-<!-- JS -->
+<!-- JavaScript -->
 <script>
   const tabs = document.querySelectorAll(".tab-btn");
   const items = document.querySelectorAll(".filter-item");
